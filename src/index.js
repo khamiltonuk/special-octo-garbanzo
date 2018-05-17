@@ -8,14 +8,14 @@ import registerServiceWorker from "./registerServiceWorker";
 import { BrowserRouter, Route } from "react-router-dom";
 import store from "./store";
 
-import Questions from "./components/Questions/Questions";
+import QuestionsContainer from "./components/Questions/QuestionsContainer";
 import QuestionDetails from "./components/QuestionDetails/QuestionDetails";
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <div>
-        <Route path="/" exact component={Questions} />
+        <Route path="/" exact component={QuestionsContainer} />
         <Route path="/question/:questionId" component={QuestionDetails} />
       </div>
     </BrowserRouter>
