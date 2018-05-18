@@ -32,3 +32,10 @@ export function fetchQuestionDetailsSuccess(payload) {
     payload
   };
 }
+
+export function fetchQuestionDetailsError(payload) {
+  return {
+    type: types.FETCH_QUESTION_DETAILS_ERROR,
+    payload
+  };
+}
