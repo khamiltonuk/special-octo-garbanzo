@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.questions {
+  max-width: 600px;
+}
+.question-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.question-list li a:visited,
+.question-list li a {
+  color: black;
+}
+.question-list li a {
+  padding: 10px;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.question-list li a:hover {
+  background: lightcoral;
+}

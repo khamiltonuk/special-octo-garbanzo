@@ -16,7 +16,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Route path="/" exact component={QuestionsContainer} />
-        <Route path="/question/:questionId" component={QuestionDetails} />
+        <Route path="/questions/:questionId" component={QuestionDetails} />
       </div>
     </BrowserRouter>
   </Provider>,
