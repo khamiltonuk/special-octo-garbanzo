@@ -17,7 +17,8 @@ export class QuestionDetailsContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    questionDetail: state.questions
+    questionDetail: state.questions,
+    loading: state.loading
   };
 }
 

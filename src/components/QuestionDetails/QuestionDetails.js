@@ -15,7 +15,7 @@ const QuestionDetails = props => {
       return int !== 0 ? Math.floor(int / total * 100) : 0;
     });
   };
-  console.log(choices && calculatePercentages(choices.map(el => el.votes)));
+
   const percentageArray =
     choices && calculatePercentages(choices.map(el => el.votes));
   return (

@@ -16,7 +16,8 @@ export class QuestionsContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    questions: state.questions
+    questions: state.questions,
+    loading: state.loading
   };
 }
 
