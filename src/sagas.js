@@ -21,7 +21,6 @@ function* getApiData(action) {
     yield put(fetchQuestionsSucess(data));
   } catch (e) {
     yield put(fetchQuestionsError(e));
-    console.log(e);
   }
 }
 
@@ -32,7 +31,6 @@ function* getQuestionDetails(action) {
     yield put(fetchQuestionDetailsSuccess(data));
   } catch (e) {
     yield put(fetchQuestionDetailsError(e));
-    console.log(e);
   }
 }
 

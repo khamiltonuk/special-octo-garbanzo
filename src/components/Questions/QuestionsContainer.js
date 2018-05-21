@@ -10,14 +10,22 @@ export class QuestionsContainer extends Component {
   }
 
   render() {
-    return <Questions {...this.props} />;
+    if (this.props.global.loading) {
+      return (
+        <div className="loader">
+          <span className="visuallyhidden">Loading</span>
+        </div>
+      );
+    } else {
+      return <Questions {...this.props} />;
+    }
   }
 }
 
 function mapStateToProps(state) {
   return {
     questions: state.questions,
-    loading: state.loading
+    global: state.global
   };
 }
 

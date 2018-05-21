@@ -11,14 +11,22 @@ export class QuestionDetailsContainer extends Component {
   }
 
   render() {
-    return <QuestionDetails {...this.props} />;
+    if (this.props.global.loading) {
+      return (
+        <div className="loader">
+          <span className="visuallyhidden">Loading</span>
+        </div>
+      );
+    } else {
+      return <QuestionDetails {...this.props} />;
+    }
   }
 }
 
 function mapStateToProps(state) {
   return {
     questionDetail: state.questions,
-    loading: state.loading
+    global: state.global
   };
 }
 

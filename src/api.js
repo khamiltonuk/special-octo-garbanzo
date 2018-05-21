@@ -7,7 +7,7 @@ export const fetchData = async () => {
     const data = await response.json();
     return data;
   } catch (e) {
-    console.log("hello");
+    console.log(e);
   }
 };
 
@@ -20,6 +20,6 @@ export const fetchQuestionDetails = async id => {
     const data = await response.json();
     return data;
   } catch (e) {
-    console.log("hello");
+    console.log(e);
   }
 };

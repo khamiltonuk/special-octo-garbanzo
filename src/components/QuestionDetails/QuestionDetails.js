@@ -16,8 +16,7 @@ const QuestionDetails = props => {
     });
   };
 
-  const percentageArray =
-    choices && calculatePercentages(choices.map(el => el.votes));
+  const percentageArray = calculatePercentages(choices.map(el => el.votes));
   return (
     <div>
       <h1>Questions Details</h1>
@@ -37,18 +36,17 @@ const QuestionDetails = props => {
           </tr>
         </thead>
         <tbody>
-          {choices &&
-            choices.map((el, i) => {
-              return (
-                <tr key={i}>
-                  <td>{el.choice}</td>
-                  <td>{el.votes}</td>
-                  <td>
-                    <Progress percent={percentageArray[i]} />
-                  </td>
-                </tr>
-              );
-            })}
+          {choices.map((el, i) => {
+            return (
+              <tr key={i}>
+                <td>{el.choice}</td>
+                <td>{el.votes}</td>
+                <td>
+                  <Progress percent={percentageArray[i]} />
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
