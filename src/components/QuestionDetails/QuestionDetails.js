@@ -1,17 +1,23 @@
 import React from "react";
 import TimeAgo from "react-timeago";
+import { Progress } from "react-sweet-progress";
+
+import "react-sweet-progress/lib/style.css";
 import "./QuestionDetails.css";
 
 const QuestionDetails = props => {
   const { published_at, question, choices } = props.questionDetail;
 
   const calculatePercentages = arr => {
+    // console.log(arr);
     const total = arr.reduce((a, b) => a + b);
+    // console.log(total);
     return arr.map(int => {
-      return Math.floor(int / total * 100);
+      console.log(0 / 0);
+      return int !== 0 ? Math.floor(int / total * 100) : 0;
     });
   };
-
+  console.log(choices && calculatePercentages(choices.map(el => el.votes)));
   const percentageArray =
     choices && calculatePercentages(choices.map(el => el.votes));
   return (
@@ -38,7 +44,9 @@ const QuestionDetails = props => {
                 <tr key={i}>
                   <td>{el.choice}</td>
                   <td>{el.votes}</td>
-                  <td>{percentageArray[i]}</td>
+                  <td>
+                    <Progress percent={percentageArray[i]} />
+                  </td>
                 </tr>
               );
             })}
