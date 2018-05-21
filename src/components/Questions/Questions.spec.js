@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Questions from "./Questions";
 import { shallow } from "enzyme";
 
@@ -82,11 +81,6 @@ describe("Questions", () => {
   });
 
   test("Should return a h1 with the title Questions", () => {
-    const wrapper = shallow(<Questions />);
-    expect(wrapper.find("h1").text()).toEqual("Questions");
-  });
-
-  test("Should return no items if no props ", () => {
     const wrapper = shallow(<Questions />);
     expect(wrapper.find("h1").text()).toEqual("Questions");
   });

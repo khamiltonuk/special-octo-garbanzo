@@ -25,7 +25,7 @@ export class QuestionDetailsContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    questionDetail: state.questions,
+    questionDetails: state.questionDetails,
     global: state.global
   };
 }

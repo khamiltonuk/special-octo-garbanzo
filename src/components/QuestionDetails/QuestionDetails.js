@@ -7,16 +7,17 @@ import "react-sweet-progress/lib/style.css";
 import "./QuestionDetails.css";
 
 export const calculatePercentages = arr => {
-  const max = Math.max(...arr);
+  const total = arr.reduce((a, b) => a + b);
   return arr.map(int => {
-    return int !== 0 ? Math.floor(int / max * 100) : 0;
+    return int !== 0 ? Math.floor(int / total * 100) : 0;
   });
 };
 
-const QuestionDetails = props => {
-  const { published_at, question, choices } = props.questionDetail;
+export const QuestionDetails = props => {
+  const { published_at, question, choices } = props.questionDetails;
 
-  const percentageArray = calculatePercentages(choices.map(el => el.votes));
+  const percentageArray =
+    choices && calculatePercentages(choices.map(el => el.votes));
   return (
     <div>
       <h1>Questions Details</h1>

@@ -1,10 +1,10 @@
-import { FETCH_QUESTIONS_SUCCESS } from "./../constants/actionTypes";
+import { FETCH_QUESTION_DETAILS_SUCCESS } from "./../constants/actionTypes";
 
 const initialState = [];
 
 function questions(state = initialState, { type, payload }) {
   switch (type) {
-    case FETCH_QUESTIONS_SUCCESS:
+    case FETCH_QUESTION_DETAILS_SUCCESS:
       return payload;
     default:
       return state;
