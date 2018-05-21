@@ -5,20 +5,23 @@ import "./index.css";
 import { Provider } from "react-redux";
 import registerServiceWorker from "./registerServiceWorker";
 
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import store from "./store";
 
 import QuestionsContainer from "./components/Questions/QuestionsContainer";
-import QuestionDetails from "./components/QuestionDetails/QuestionDetails";
+import QuestionDetailsContainer from "./components/QuestionDetails/QuestionDetailsContainer";
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router>
       <div>
         <Route path="/" exact component={QuestionsContainer} />
-        <Route path="/questions/:questionId" component={QuestionDetails} />
+        <Route
+          path="/questions/:questionId"
+          component={QuestionDetailsContainer}
+        />
       </div>
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById("root")
 );

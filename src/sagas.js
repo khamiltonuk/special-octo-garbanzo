@@ -28,8 +28,7 @@ function* getApiData(action) {
 function* getQuestionDetails(action) {
   try {
     //do app call
-    const data = yield call(fetchQuestionDetails);
-    console.log(data);
+    const data = yield call(fetchQuestionDetails, action.id);
     yield put(fetchQuestionDetailsSuccess(data));
   } catch (e) {
     yield put(fetchQuestionDetailsError(e));

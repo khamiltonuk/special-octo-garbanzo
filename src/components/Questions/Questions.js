@@ -1,6 +1,7 @@
 import React from "react";
 import "./Questions.css";
 import TimeAgo from "react-timeago";
+import { Link } from "react-router-dom";
 
 const Questions = props => {
   return (
@@ -10,11 +11,11 @@ const Questions = props => {
         {props.questions.map((el, i) => {
           return (
             <li key={i}>
-              <a href={el.url}>
+              <Link to={el.url}>
                 <h2>{el.question}</h2>
                 <TimeAgo date={el.published_at} />
                 <p>{el.choices.length} Choices</p>
-              </a>
+              </Link>
             </li>
           );
         })}

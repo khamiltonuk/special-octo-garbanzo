@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Questions from "./QuestionDetails";
+import QuestionDetails from "./QuestionDetails";
 import { bindActionCreators } from "redux";
 import { fetchQuestionDetails } from "../../actions/actions";
 
 export class QuestionDetailsContainer extends Component {
   componentDidMount() {
-    this.props.fetchQuestionDetails();
+    const id = this.props.location.pathname.split("/").pop();
+    this.props.fetchQuestionDetails(id);
   }
 
   render() {
@@ -16,8 +17,7 @@ export class QuestionDetailsContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    questionDetail: state.questionDetail,
-    data: state.data
+    questionDetail: state.questions
   };
 }
 
