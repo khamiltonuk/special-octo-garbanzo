@@ -17,13 +17,13 @@ const MockQuestion = {
 
 describe("QuestionDetails", () => {
   test("Should return a h1 ", () => {
-    const wrapper = shallow(<QuestionDetails questionDetail={MockQuestion} />);
+    const wrapper = shallow(<QuestionDetails questionDetails={MockQuestion} />);
 
     expect(wrapper.find("h1").exists()).toBe(true);
   });
 
   test("Should return a h1 with the title Question Details", () => {
-    const wrapper = shallow(<QuestionDetails questionDetail={MockQuestion} />);
+    const wrapper = shallow(<QuestionDetails questionDetails={MockQuestion} />);
     expect(wrapper.find("h1").text()).toEqual("Questions Details");
   });
 });

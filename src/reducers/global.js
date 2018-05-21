@@ -20,9 +20,9 @@ function global(state = initialState, { type, payload }) {
     case FETCH_QUESTION_DETAILS_SUCCESS:
       return { ...state, loading: false };
     case FETCH_QUESTIONS_ERROR:
-      return { ...state, error: true };
+      return { ...state, loading: false, error: true };
     case FETCH_QUESTION_DETAILS_ERROR:
-      return { ...state, error: true };
+      return { ...state, loading: false, error: true };
     default:
       return state;
   }
