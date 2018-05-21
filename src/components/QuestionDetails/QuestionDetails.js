@@ -1,6 +1,7 @@
 import React from "react";
 import TimeAgo from "react-timeago";
 import { Progress } from "react-sweet-progress";
+import { Link } from "react-router-dom";
 
 import "react-sweet-progress/lib/style.css";
 import "./QuestionDetails.css";
@@ -9,11 +10,8 @@ const QuestionDetails = props => {
   const { published_at, question, choices } = props.questionDetail;
 
   const calculatePercentages = arr => {
-    // console.log(arr);
     const total = arr.reduce((a, b) => a + b);
-    // console.log(total);
     return arr.map(int => {
-      console.log(0 / 0);
       return int !== 0 ? Math.floor(int / total * 100) : 0;
     });
   };
@@ -23,6 +21,7 @@ const QuestionDetails = props => {
   return (
     <div>
       <h1>Questions Details</h1>
+      <Link to="/">Back to questions</Link>
       <p>{question}</p>
       <p>
         Published: <TimeAgo date={published_at} />
