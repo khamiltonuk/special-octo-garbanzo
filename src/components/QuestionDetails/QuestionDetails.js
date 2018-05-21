@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 import "react-sweet-progress/lib/style.css";
 import "./QuestionDetails.css";
 
+export const calculatePercentages = arr => {
+  const max = Math.max(...arr);
+  return arr.map(int => {
+    return int !== 0 ? Math.floor(int / max * 100) : 0;
+  });
+};
+
 const QuestionDetails = props => {
   const { published_at, question, choices } = props.questionDetail;
-
-  const calculatePercentages = arr => {
-    const total = arr.reduce((a, b) => a + b);
-    return arr.map(int => {
-      return int !== 0 ? Math.floor(int / total * 100) : 0;
-    });
-  };
 
   const percentageArray = calculatePercentages(choices.map(el => el.votes));
   return (
@@ -36,17 +36,18 @@ const QuestionDetails = props => {
           </tr>
         </thead>
         <tbody>
-          {choices.map((el, i) => {
-            return (
-              <tr key={i}>
-                <td>{el.choice}</td>
-                <td>{el.votes}</td>
-                <td>
-                  <Progress percent={percentageArray[i]} />
-                </td>
-              </tr>
-            );
-          })}
+          {choices &&
+            choices.map((el, i) => {
+              return (
+                <tr key={i}>
+                  <td>{el.choice}</td>
+                  <td>{el.votes}</td>
+                  <td>
+                    <Progress percent={percentageArray[i]} />
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>
