@@ -20,14 +20,7 @@ export const QuestionDetails = props => {
     choices && calculatePercentages(choices.map(el => el.votes));
   return (
     <div>
-      <h1>Questions Details</h1>
-      <Link to="/">Back to questions</Link>
-      <p>{question}</p>
-      <p>
-        Published: <TimeAgo date={published_at} />
-      </p>
-
-      <h2>Choices</h2>
+      <h1>{question}</h1>
       <table className="leader-board">
         <thead>
           <tr>
@@ -51,6 +44,10 @@ export const QuestionDetails = props => {
             })}
         </tbody>
       </table>
+      <p>
+        Published: <TimeAgo date={published_at} />
+      </p>
+      <Link to="/">Back to questions</Link>
     </div>
   );
 };
