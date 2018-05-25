@@ -9,7 +9,7 @@ import {
   fetchQuestionsError,
   fetchQuestionDetailsSuccess,
   fetchQuestionDetailsError
-} from "./actions/actions";
+} from "./actions";
 
 import { fetchData, fetchQuestionDetails } from "./api";
 

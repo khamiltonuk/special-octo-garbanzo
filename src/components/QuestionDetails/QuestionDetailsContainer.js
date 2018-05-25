@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import QuestionDetails from "./QuestionDetails";
 import { bindActionCreators } from "redux";
-import { fetchQuestionDetails } from "../../actions/actions";
+import { fetchQuestionDetails } from "../../actions";
 
 export class QuestionDetailsContainer extends Component {
   componentDidMount() {
