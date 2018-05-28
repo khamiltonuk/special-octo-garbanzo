@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import QuestionDetails from "./QuestionDetails";
-import { bindActionCreators } from "redux";
-import { fetchQuestionDetails } from "../../actions";
+import { fetchQuestionDetails, questionVote } from "../../actions";
 
 export class QuestionDetailsContainer extends Component {
   componentDidMount() {
@@ -11,15 +10,7 @@ export class QuestionDetailsContainer extends Component {
   }
 
   render() {
-    if (this.props.global.loading) {
-      return (
-        <div className="loader">
-          <span className="visuallyhidden">Loading</span>
-        </div>
-      );
-    } else {
-      return <QuestionDetails {...this.props} />;
-    }
+    return <QuestionDetails {...this.props} />;
   }
 }
 
@@ -31,7 +22,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchQuestionDetails }, dispatch);
+  return {
+    fetchQuestionDetails: id => dispatch(fetchQuestionDetails(id)),
+    questionVote: id => dispatch(questionVote(id))
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
