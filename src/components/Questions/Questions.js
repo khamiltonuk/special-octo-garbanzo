@@ -3,8 +3,7 @@ import "./Questions.css";
 import TimeAgo from "react-timeago";
 import { Link } from "react-router-dom";
 
-const Questions = props => {
-  const { questions } = props;
+const Questions = ({ questions }) => {
   return (
     <div className="questions">
       <h1>Questions</h1>
