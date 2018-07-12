@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Questions from "./Questions";
+import QuestionsSkeleton from "./QuestionsSkeleton";
 import { bindActionCreators } from "redux";
 import { fetchQuestions } from "../../actions";
 
@@ -11,11 +12,7 @@ export class QuestionsContainer extends Component {
 
   render() {
     if (this.props.global.loading) {
-      return (
-        <div className="loader">
-          <span className="visuallyhidden">Loading</span>
-        </div>
-      );
+      return <QuestionsSkeleton />;
     } else {
       return <Questions {...this.props} />;
     }
@@ -33,4 +30,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchQuestions }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionsContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(QuestionsContainer);
