@@ -1,0 +1,31 @@
+button {
+  border: 4px solid #eb5252;
+  color: #fff;
+  background: #eb5252;
+  transition: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+}
+button:hover {
+  background: transparent;
+  color: #eb5252;
+}
+
+input[type="radio"]:checked ~ .check {
+  border: 5px solid #0dff92;
+}
+
+input[type="radio"]:checked ~ .check::before {
+  background: #0dff92;
+}
+
+input[type="radio"]:checked ~ label {
+  color: #0dff92;
+}

@@ -13,6 +13,8 @@ export class QuestionsContainer extends Component {
   render() {
     if (this.props.global.loading) {
       return <QuestionsSkeleton />;
+    } else if (this.props.global.error) {
+      return <div>failed to fetch question</div>;
     } else {
       return <Questions {...this.props} />;
     }
