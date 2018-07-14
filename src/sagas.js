@@ -17,7 +17,7 @@ import {
 import { fetchData, fetchQuestionDetails, postQuestionVote } from "./api";
 
 // Worker Saga: will be fired on FETCH_QUESTIONS actions
-export function* getApiData(action) {
+export function* getApiData() {
   try {
     const data = yield call(fetchData);
     yield put(fetchQuestionsSucess(data));
@@ -26,7 +26,7 @@ export function* getApiData(action) {
   }
 }
 
-function* getQuestionDetails(action) {
+export function* getQuestionDetails(action) {
   try {
     const data = yield call(fetchQuestionDetails, action.id);
     yield put(fetchQuestionDetailsSuccess(data));
