@@ -1,44 +1,123 @@
-<testsuites name="jest tests" tests="16" failures="0" time="2.0959999999999996">
-  <testsuite name="Global reducer" errors="0" failures="0" skipped="0" timestamp="2018-05-21T20:51:24" time="1.378" tests="5">
-    <testcase classname="Global reducer should return initial state" name="Global reducer should return initial state" time="0.004">
+<testsuites name="jest tests" tests="17" failures="4" time="6.244000000000001">
+  <testsuite name="Global reducer" errors="0" failures="0" skipped="0" timestamp="2018-07-14T06:44:22" time="1.505" tests="5">
+    <testcase classname="Global reducer should return initial state" name="Global reducer should return initial state" time="0.006">
     </testcase>
-    <testcase classname="Global reducer should return a loading state of false is fetching questions is successful" name="Global reducer should return a loading state of false is fetching questions is successful" time="0.001">
+    <testcase classname="Global reducer should return a loading state of false is fetching questions is successful" name="Global reducer should return a loading state of false is fetching questions is successful" time="0">
     </testcase>
-    <testcase classname="Global reducer should return a loading state of false is fetching question details is successful" name="Global reducer should return a loading state of false is fetching question details is successful" time="0">
+    <testcase classname="Global reducer should return a loading state of false is fetching question details is successful" name="Global reducer should return a loading state of false is fetching question details is successful" time="0.001">
     </testcase>
     <testcase classname="Global reducer should return a loading state of false and error state of true is fetching question details returns an error" name="Global reducer should return a loading state of false and error state of true is fetching question details returns an error" time="0">
     </testcase>
-    <testcase classname="Global reducer should return a loading state of false and error state of true is fetching questions returns an error" name="Global reducer should return a loading state of false and error state of true is fetching questions returns an error" time="0.001">
+    <testcase classname="Global reducer should return a loading state of false and error state of true is fetching questions returns an error" name="Global reducer should return a loading state of false and error state of true is fetching questions returns an error" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="actions" errors="0" failures="0" skipped="0" timestamp="2018-05-21T20:51:25" time="0.162" tests="3">
-    <testcase classname="actions should return parameter as payload" name="actions should return parameter as payload" time="0.001">
+  <testsuite name="Questions" errors="0" failures="0" skipped="0" timestamp="2018-07-14T06:44:22" time="1.565" tests="4">
+    <testcase classname="Questions Should return a h1 " name="Questions Should return a h1 " time="0.012">
     </testcase>
-    <testcase classname="actions should return just the correct type" name="actions should return just the correct type" time="0">
-    </testcase>
-    <testcase classname="actions fetchQuestionDetails should return FETCH_QUESTION_DETAILS action type" name="actions fetchQuestionDetails should return FETCH_QUESTION_DETAILS action type" time="0">
-    </testcase>
-  </testsuite>
-  <testsuite name="QuestionDetails" errors="0" failures="0" skipped="0" timestamp="2018-05-21T20:51:25" time="0.249" tests="3">
-    <testcase classname="QuestionDetails Should return a h1 " name="QuestionDetails Should return a h1 " time="0.017">
-    </testcase>
-    <testcase classname="QuestionDetails Should return a h1 with the title Question Details" name="QuestionDetails Should return a h1 with the title Question Details" time="0.003">
-    </testcase>
-    <testcase classname="calculatePercentages should calulate the percentage of given array" name="calculatePercentages should calulate the percentage of given array" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="Questions" errors="0" failures="0" skipped="0" timestamp="2018-05-21T20:51:26" time="0.171" tests="4">
-    <testcase classname="Questions Should return a h1 " name="Questions Should return a h1 " time="0.002">
-    </testcase>
-    <testcase classname="Questions Should return a h1 with the title Questions" name="Questions Should return a h1 with the title Questions" time="0.001">
+    <testcase classname="Questions Should return a h1 with the title Questions" name="Questions Should return a h1 with the title Questions" time="0.003">
     </testcase>
     <testcase classname="Questions Should return no items if no props " name="Questions Should return no items if no props " time="0.002">
     </testcase>
-    <testcase classname="Questions Should return two list items if given two questions" name="Questions Should return two list items if given two questions" time="0.012">
+    <testcase classname="Questions Should return two list items if given two questions" name="Questions Should return two list items if given two questions" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="Question reducer" errors="0" failures="0" skipped="0" timestamp="2018-05-21T20:51:26" time="0.136" tests="1">
+  <testsuite name="QuestionDetails" errors="0" failures="1" skipped="0" timestamp="2018-07-14T06:44:22" time="1.82" tests="3">
+    <testcase classname="QuestionDetails Should return a h1 " name="QuestionDetails Should return a h1 " time="0.014">
+    </testcase>
+    <testcase classname="QuestionDetails Should return a h1 with the title Question Details" name="QuestionDetails Should return a h1 with the title Question Details" time="0.009">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;Questions Details&quot;
+Received:
+  &quot;hello mum&quot;
+    at Object.test (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/src/components/QuestionDetails/QuestionDetails.spec.js:27:39)
+    at Object.asyncFn (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/jasmine_async.js:82:37)
+    at resolve (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:52:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:39:19)
+    at promise.then (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:73:82)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="calculatePercentages should calulate the percentage of given array" name="calculatePercentages should calulate the percentage of given array" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="actions" errors="0" failures="2" skipped="0" timestamp="2018-07-14T06:44:24" time="0.44" tests="2">
+    <testcase classname="actions should return parameter as payload" name="actions should return parameter as payload" time="0.016">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  {&quot;payload&quot;: &quot;Finish docs&quot;, &quot;type&quot;: &quot;FETCH_QUESTIONS_SUCCESS&quot;}
+Received:
+  {&quot;payload&quot;: &quot;Finish docs&quot;, &quot;type&quot;: &quot;QUESTION_VOTE_SUCCESS&quot;}
+
+Difference:
+
+- Expected
++ Received
+
+  Object {
+    &quot;payload&quot;: &quot;Finish docs&quot;,
+-   &quot;type&quot;: &quot;FETCH_QUESTIONS_SUCCESS&quot;,
++   &quot;type&quot;: &quot;QUESTION_VOTE_SUCCESS&quot;,
+  }
+    at Object.test (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/src/actions/questionVote.spec.js:11:60)
+    at Object.asyncFn (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/jasmine_async.js:82:37)
+    at resolve (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:52:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:39:19)
+    at promise.then (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:73:82)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="actions should return just the correct type" name="actions should return just the correct type" time="0.007">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  {&quot;type&quot;: &quot;FETCH_QUESTIONS&quot;}
+Received:
+  {&quot;payload&quot;: undefined, &quot;type&quot;: &quot;QUESTION_VOTE&quot;}
+
+Difference:
+
+- Expected
++ Received
+
+  Object {
+-   &quot;type&quot;: &quot;FETCH_QUESTIONS&quot;,
++   &quot;payload&quot;: undefined,
++   &quot;type&quot;: &quot;QUESTION_VOTE&quot;,
+  }
+    at Object.test (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/src/actions/questionVote.spec.js:18:47)
+    at Object.asyncFn (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/jasmine_async.js:82:37)
+    at resolve (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:52:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:39:19)
+    at promise.then (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:73:82)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Question reducer" errors="0" failures="0" skipped="0" timestamp="2018-07-14T06:44:24" time="0.272" tests="1">
     <testcase classname="Question reducer should return initial state" name="Question reducer should return initial state" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="fetchQuestionDetails" errors="0" failures="0" skipped="0" timestamp="2018-07-14T06:44:24" time="0.314" tests="1">
+    <testcase classname="fetchQuestionDetails should return FETCH_QUESTION_DETAILS action type" name="fetchQuestionDetails should return FETCH_QUESTION_DETAILS action type" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="getApiDate" errors="0" failures="1" skipped="0" timestamp="2018-07-14T06:44:24" time="0.328" tests="1">
+    <testcase classname="getApiDate should yeild desired event" name="getApiDate should yeild desired event" time="0.002">
+      <failure>TypeError: _sagas.getApiData.next is not a function
+    at Object.it (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/src/saga.spec.js:7:30)
+    at Object.asyncFn (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/jasmine_async.js:82:37)
+    at resolve (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:52:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:39:19)
+    at promise.then (/Users/kristian.hamilton/Development/personal/special-octo-garbanzo/node_modules/jest-jasmine2/build/queue_runner.js:73:82)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
   </testsuite>
 </testsuites>

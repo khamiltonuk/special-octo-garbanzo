@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 
 const MockQuestion = {
   published_at: "2015-05-27T21:22:26.648000+00:00",
-  question: "hello mum",
+  question: "Question Title",
   url: "/hello",
   choices: [
     {
@@ -24,7 +24,7 @@ describe("QuestionDetails", () => {
 
   test("Should return a h1 with the title Question Details", () => {
     const wrapper = shallow(<QuestionDetails questionDetails={MockQuestion} />);
-    expect(wrapper.find("h1").text()).toEqual("Questions Details");
+    expect(wrapper.find("h1").text()).toEqual("Question Title");
   });
 });
 

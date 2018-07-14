@@ -1,8 +1,5 @@
-import * as actions from "./actions";
-import {
-  fetchQuestionsSucess,
-  fetchQuestions
-} from "./../constants/actionTypes";
+import * as types from "../constants/actionTypes";
+import { fetchQuestionsSucess, fetchQuestions } from "./fetchQuestion";
 
 describe("actions", () => {
   test("should return parameter as payload", () => {
