@@ -16,11 +16,9 @@ import {
 
 import { fetchData, fetchQuestionDetails, postQuestionVote } from "./api";
 
-// Worker Saga: will be fired on USER_FETCH_REQUESTED actions
+// Worker Saga: will be fired on FETCH_QUESTIONS actions
 function* getApiData(action) {
   try {
-    //console.log(formData);
-
     const data = yield call(fetchData);
     yield put(fetchQuestionsSucess(data));
   } catch (e) {
@@ -30,8 +28,6 @@ function* getApiData(action) {
 
 function* getQuestionDetails(action) {
   try {
-    //console.log(formData);
-
     const data = yield call(fetchQuestionDetails, action.id);
     yield put(fetchQuestionDetailsSuccess(data));
   } catch (e) {
@@ -41,8 +37,6 @@ function* getQuestionDetails(action) {
 
 function* sendQuestionVote(action) {
   try {
-    //console.log(action);
-
     const data = yield call(postQuestionVote, action.payload);
     yield put(questionVoteSucess(data));
   } catch (e) {
